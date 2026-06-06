@@ -315,6 +315,15 @@ h1 {
   min-height: 340px;
 }
 
+.picture-clue {
+  margin: -4px 0 16px;
+  font-size: clamp(4rem, 12vw, 8.8rem);
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 8px 18px rgba(141, 69, 98, 0.12);
+}
+
 .question-meta {
   display: flex;
   justify-content: space-between;

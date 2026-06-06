@@ -16,7 +16,7 @@
 
         <div class="host-bar">
           <div>
-            <h1>How Well Do You Know Ashika?</h1>
+            <h1 id="gameTitle">How Well Do You Know Ashika?</h1>
           </div>
           <div class="round-pill" id="roundLabel">Setup</div>
         </div>
@@ -55,7 +55,9 @@
           </div>
 
         <div class="actions">
-          <button class="secondary" id="loadSampleBtn" type="button">Load Sample</button>
+          <button class="secondary" id="loadSampleBtn" type="button">Ashika Quiz</button>
+          <button class="secondary" id="loadMovieSongBtn" type="button">Guess Movie/Song</button>
+          <button class="secondary" id="loadPlayersBtn" type="button">Load Players</button>
           <button class="secondary" id="shareSetupBtn" type="button">Copy Setup Link</button>
           <button class="secondary" id="resetBtn" type="button">Reset</button>
           <button class="secondary" id="fullscreenBtn" type="button">Full Screen</button>
@@ -72,6 +74,7 @@
               <span id="questionCounter">Question 1</span>
               <span id="pointsLabel">1 point</span>
             </div>
+            <div class="picture-clue hidden" id="pictureClue"></div>
             <h2 id="currentQuestion">Question text</h2>
             <div class="answer-grid" id="answerGrid"></div>
             <div class="answer-reveal" id="answerReveal"></div>

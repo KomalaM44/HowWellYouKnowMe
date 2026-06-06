@@ -1,3 +1,5 @@
+const defaultPlayers = ["Layla", "Sarah", "Jaya", "Hrithika", "Alia", "Paula", "Charvi", "Katelyn", "Mylana", "June", "Aditya", "Ashika"];
+
 const sampleQuestions = [
   {
     question: "What is Ashika's favorite song right now?",
@@ -101,7 +103,41 @@ const sampleQuestions = [
   },
 ];
 
+const movieSongQuestions = [
+  { question: "Guess the movie from the pictures.", clue: "🦁 👑", answer: "The Lion King", options: ["The Lion King", "Jungle Book", "Madagascar", "Zootopia"] },
+  { question: "Guess the movie from the pictures.", clue: "❄️ 👭 ⛄", answer: "Frozen", options: ["Frozen", "Brave", "Moana", "Tangled"] },
+  { question: "Guess the movie from the pictures.", clue: "🧠 😊 😢 😡", answer: "Inside Out", options: ["Inside Out", "Soul", "Elemental", "Up"] },
+  { question: "Guess the movie from the pictures.", clue: "🌊 ⛵ 🌺", answer: "Moana", options: ["Moana", "Lilo & Stitch", "The Little Mermaid", "Wish"] },
+  { question: "Guess the movie from the pictures.", clue: "🏠 🦋 🎶", answer: "Encanto", options: ["Encanto", "Coco", "Trolls", "Wish"] },
+  { question: "Guess the movie from the pictures.", clue: "👱‍♀️ 🗼 ✨", answer: "Tangled", options: ["Tangled", "Cinderella", "Brave", "Frozen"] },
+  { question: "Guess the movie from the pictures.", clue: "🐠 🔍 🌊", answer: "Finding Nemo", options: ["Finding Nemo", "Finding Dory", "Shark Tale", "Luca"] },
+  { question: "Guess the movie from the pictures.", clue: "🤠 🚀 🧸", answer: "Toy Story", options: ["Toy Story", "Lightyear", "The Lego Movie", "WALL-E"] },
+  { question: "Guess the movie from the pictures.", clue: "🏠 🎈 🎈", answer: "Up", options: ["Up", "Home", "Inside Out", "Coco"] },
+  { question: "Guess the movie from the pictures.", clue: "🎸 💀 🌼", answer: "Coco", options: ["Coco", "Encanto", "Soul", "The Book of Life"] },
+  { question: "Guess the movie from the pictures.", clue: "🍌 👓 💛", answer: "Minions", options: ["Minions", "Despicable Me", "Sing", "The Bad Guys"] },
+  { question: "Guess the movie from the pictures.", clue: "⚡ 🧙‍♂️ 🏰", answer: "Harry Potter", options: ["Harry Potter", "Percy Jackson", "Matilda", "Narnia"] },
+  { question: "Guess the movie from the pictures.", clue: "🧜‍♀️ 🐠 🌊", answer: "The Little Mermaid", options: ["The Little Mermaid", "Moana", "Finding Nemo", "Luca"] },
+  { question: "Guess the movie from the pictures.", clue: "🌹 🏰 🐺", answer: "Beauty and the Beast", options: ["Beauty and the Beast", "Cinderella", "Sleeping Beauty", "Maleficent"] },
+  { question: "Guess the movie from the pictures.", clue: "🧞‍♂️ 🕌 🪄", answer: "Aladdin", options: ["Aladdin", "Wish", "Coco", "Mulan"] },
+  { question: "Guess the movie from the pictures.", clue: "🍫 🎩 🏭", answer: "Wonka", options: ["Wonka", "Matilda", "The Lorax", "Paddington"] },
+  { question: "Guess the movie from the pictures.", clue: "🍄 ⭐ 👨‍🔧", answer: "The Super Mario Bros. Movie", options: ["The Super Mario Bros. Movie", "Sonic the Hedgehog", "Wreck-It Ralph", "The Lego Movie"] },
+  { question: "Guess the movie from the pictures.", clue: "🕷️ 🧑‍🎤 🏙️", answer: "Spider-Man", options: ["Spider-Man", "Batman", "The Flash", "Black Panther"] },
+  { question: "Guess the movie from the pictures.", clue: "💗 👠 🏖️", answer: "Barbie", options: ["Barbie", "Clueless", "Legally Blonde", "Mean Girls"] },
+  { question: "Guess the movie from the pictures.", clue: "🔥 💧 🌆", answer: "Elemental", options: ["Elemental", "Inside Out", "Soul", "WALL-E"] },
+  { question: "Guess the song from the pictures.", clue: "👋 💃 ✨", answer: "Shake It Off", options: ["Shake It Off", "Dance Monkey", "Roar", "Happy"] },
+  { question: "Guess the song from the pictures.", clue: "❄️ 🙌 👑", answer: "Let It Go", options: ["Let It Go", "Into the Unknown", "A Whole New World", "Reflection"] },
+  { question: "Guess the song from the pictures.", clue: "🐯 🎤 🔊", answer: "Roar", options: ["Roar", "Firework", "Stronger", "Brave"] },
+  { question: "Guess the song from the pictures.", clue: "🌸 💪 💐", answer: "Flowers", options: ["Flowers", "Lavender Haze", "Watermelon Sugar", "Golden"] },
+  { question: "Guess the song from the pictures.", clue: "☀️ 💔 😎", answer: "Cruel Summer", options: ["Cruel Summer", "Summer", "Anti-Hero", "Blank Space"] },
+  { question: "Guess the song from the pictures.", clue: "🚫 🦸‍♀️ 🪞", answer: "Anti-Hero", options: ["Anti-Hero", "Bad Blood", "Hero", "Unstoppable"] },
+  { question: "Guess the song from the pictures.", clue: "🐒 💃 🎵", answer: "Dance Monkey", options: ["Dance Monkey", "Shake It Off", "Monkey Wrench", "Uptown Funk"] },
+  { question: "Guess the song from the pictures.", clue: "🎆 🌃 ✨", answer: "Firework", options: ["Firework", "Roar", "Dynamite", "Counting Stars"] },
+  { question: "Guess the song from the pictures.", clue: "😀 👏 ☀️", answer: "Happy", options: ["Happy", "Good as Hell", "Best Day Ever", "Smile"] },
+  { question: "Guess the song from the pictures.", clue: "💡 🚗 🌃", answer: "Blinding Lights", options: ["Blinding Lights", "Lights", "Levitating", "As It Was"] },
+];
+
 const state = {
+  gameTitle: "How Well Do You Know Ashika?",
   players: [],
   questions: [],
   currentQuestion: 0,
@@ -114,6 +150,7 @@ const els = {
   setupView: document.querySelector("#setupView"),
   gameView: document.querySelector("#gameView"),
   winnerView: document.querySelector("#winnerView"),
+  gameTitle: document.querySelector("#gameTitle"),
   roundLabel: document.querySelector("#roundLabel"),
   playerForm: document.querySelector("#playerForm"),
   playerName: document.querySelector("#playerName"),
@@ -126,6 +163,8 @@ const els = {
   cancelEditBtn: document.querySelector("#cancelEditBtn"),
   questionList: document.querySelector("#questionList"),
   loadSampleBtn: document.querySelector("#loadSampleBtn"),
+  loadMovieSongBtn: document.querySelector("#loadMovieSongBtn"),
+  loadPlayersBtn: document.querySelector("#loadPlayersBtn"),
   shareSetupBtn: document.querySelector("#shareSetupBtn"),
   shareStatus: document.querySelector("#shareStatus"),
   resetBtn: document.querySelector("#resetBtn"),
@@ -134,6 +173,7 @@ const els = {
   scoreboard: document.querySelector("#scoreboard"),
   questionCounter: document.querySelector("#questionCounter"),
   pointsLabel: document.querySelector("#pointsLabel"),
+  pictureClue: document.querySelector("#pictureClue"),
   currentQuestion: document.querySelector("#currentQuestion"),
   answerGrid: document.querySelector("#answerGrid"),
   answerReveal: document.querySelector("#answerReveal"),
@@ -152,10 +192,22 @@ function saveState() {
   localStorage.setItem(
     "ashika-know-me-game",
     JSON.stringify({
+      gameTitle: state.gameTitle,
       players: state.players,
       questions: state.questions,
     }),
   );
+}
+
+function cloneQuestions(questions) {
+  return questions.map((item) => ({
+    ...item,
+    options: [...item.options],
+  }));
+}
+
+function loadDefaultPlayers() {
+  state.players = defaultPlayers.map((name) => ({ name, score: 0 }));
 }
 
 function encodeSetupPayload(payload) {
@@ -181,8 +233,9 @@ function loadSetupFromUrl() {
 
   try {
     const parsed = decodeSetupPayload(match[1]);
+    state.gameTitle = String(parsed.gameTitle || "How Well Do You Know Ashika?");
     state.players = Array.isArray(parsed.players) ? parsed.players : [];
-    state.questions = Array.isArray(parsed.questions) ? parsed.questions : [...sampleQuestions];
+    state.questions = Array.isArray(parsed.questions) ? parsed.questions : cloneQuestions(sampleQuestions);
     state.players = state.players.map((player) => ({
       name: String(player.name ?? "").trim() || "Player",
       score: 0,
@@ -199,16 +252,19 @@ function loadState() {
 
   const saved = localStorage.getItem("ashika-know-me-game");
   if (!saved) {
-    state.questions = [...sampleQuestions];
+    loadDefaultPlayers();
+    state.questions = cloneQuestions(sampleQuestions);
     return;
   }
 
   try {
     const parsed = JSON.parse(saved);
+    state.gameTitle = String(parsed.gameTitle || "How Well Do You Know Ashika?");
     state.players = Array.isArray(parsed.players) ? parsed.players : [];
-    state.questions = Array.isArray(parsed.questions) ? parsed.questions : [...sampleQuestions];
+    state.questions = Array.isArray(parsed.questions) ? parsed.questions : cloneQuestions(sampleQuestions);
   } catch {
-    state.questions = [...sampleQuestions];
+    loadDefaultPlayers();
+    state.questions = cloneQuestions(sampleQuestions);
   }
 }
 
@@ -218,6 +274,7 @@ function showView(viewName) {
 }
 
 function renderSetup() {
+  els.gameTitle.textContent = state.gameTitle;
   els.roundLabel.textContent = "Setup";
   els.playerList.innerHTML = "";
   els.questionList.innerHTML = "";
@@ -319,6 +376,7 @@ function clearQuestionForm() {
 
 async function copySetupLink() {
   const payload = {
+    gameTitle: state.gameTitle,
     players: state.players.map((player) => ({ name: player.name, score: 0 })),
     questions: state.questions,
   };
@@ -354,9 +412,12 @@ function renderScoreboard() {
 function renderQuestion() {
   const item = state.questions[state.currentQuestion];
   const total = state.questions.length;
+  els.gameTitle.textContent = state.gameTitle;
   els.roundLabel.textContent = `Question ${state.currentQuestion + 1} of ${total}`;
   els.questionCounter.textContent = `Question ${state.currentQuestion + 1}`;
   els.pointsLabel.textContent = "1 point";
+  els.pictureClue.textContent = item.clue || "";
+  els.pictureClue.classList.toggle("hidden", !item.clue);
   els.currentQuestion.textContent = item.question;
   els.answerGrid.innerHTML = "";
   els.answerReveal.textContent = state.revealed ? `Answer: ${item.answer}` : "";
@@ -444,7 +505,8 @@ async function enterFullscreen() {
 
 function resetAll() {
   state.players = [];
-  state.questions = [...sampleQuestions];
+  state.gameTitle = "How Well Do You Know Ashika?";
+  state.questions = cloneQuestions(sampleQuestions);
   state.currentQuestion = 0;
   state.editingQuestionIndex = null;
   state.revealed = false;
@@ -472,6 +534,10 @@ els.questionForm.addEventListener("submit", (event) => {
   if (state.editingQuestionIndex === null) {
     state.questions.push(formQuestion);
   } else {
+    const existing = state.questions[state.editingQuestionIndex];
+    if (existing?.clue) {
+      formQuestion.clue = existing.clue;
+    }
     state.questions[state.editingQuestionIndex] = formQuestion;
   }
 
@@ -486,8 +552,23 @@ els.cancelEditBtn.addEventListener("click", () => {
 });
 
 els.loadSampleBtn.addEventListener("click", () => {
-  state.questions = [...sampleQuestions];
+  state.gameTitle = "How Well Do You Know Ashika?";
+  state.questions = cloneQuestions(sampleQuestions);
   clearQuestionForm();
+  saveState();
+  renderSetup();
+});
+
+els.loadMovieSongBtn.addEventListener("click", () => {
+  state.gameTitle = "Guess the Movie or Song";
+  state.questions = cloneQuestions(movieSongQuestions);
+  clearQuestionForm();
+  saveState();
+  renderSetup();
+});
+
+els.loadPlayersBtn.addEventListener("click", () => {
+  loadDefaultPlayers();
   saveState();
   renderSetup();
 });
