@@ -422,13 +422,15 @@ function renderQuestion() {
   els.answerGrid.innerHTML = "";
   els.answerReveal.textContent = state.revealed ? `Answer: ${item.answer}` : "";
 
-  item.options.forEach((option, index) => {
-    const choice = document.createElement("div");
-    const isCorrect = state.revealed && option.trim().toLowerCase() === item.answer.trim().toLowerCase();
-    choice.className = `answer-choice${isCorrect ? " correct" : ""}`;
-    choice.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
-    els.answerGrid.append(choice);
-  });
+  if (!item.clue) {
+    item.options.forEach((option, index) => {
+      const choice = document.createElement("div");
+      const isCorrect = state.revealed && option.trim().toLowerCase() === item.answer.trim().toLowerCase();
+      choice.className = `answer-choice${isCorrect ? " correct" : ""}`;
+      choice.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
+      els.answerGrid.append(choice);
+    });
+  }
 
   els.awardGrid.innerHTML = "";
   state.players.forEach((player, index) => {
