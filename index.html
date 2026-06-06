@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How Well Do You Know Ashika?</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="stage" aria-live="polite">
+        <div class="ribbon ribbon-top-left" aria-hidden="true"></div>
+        <div class="ribbon ribbon-top-right" aria-hidden="true"></div>
+        <div class="ribbon ribbon-bottom-left" aria-hidden="true"></div>
+        <div class="ribbon ribbon-bottom-right" aria-hidden="true"></div>
+
+        <div class="host-bar">
+          <div>
+            <h1>How Well Do You Know Ashika?</h1>
+          </div>
+          <div class="round-pill" id="roundLabel">Setup</div>
+        </div>
+
+        <section class="view view-active" id="setupView">
+          <div class="setup-grid">
+            <div class="panel">
+              <h2>Players</h2>
+              <p class="helper">Add each friend or team. Scores stay on this device.</p>
+              <form class="inline-form" id="playerForm">
+                <input id="playerName" type="text" autocomplete="off" placeholder="Friend name" />
+                <button type="submit">Add</button>
+              </form>
+              <div class="chip-list" id="playerList"></div>
+            </div>
+
+            <div class="panel">
+              <h2>Questions</h2>
+              <p class="helper">Ashika can edit these before the party starts.</p>
+              <form class="question-form" id="questionForm">
+                <input id="questionText" type="text" placeholder="Question" />
+                <input id="answerText" type="text" placeholder="Correct answer" />
+                <div class="options-grid">
+                  <input class="optionInput" type="text" placeholder="Choice A" />
+                  <input class="optionInput" type="text" placeholder="Choice B" />
+                  <input class="optionInput" type="text" placeholder="Choice C" />
+                  <input class="optionInput" type="text" placeholder="Choice D" />
+                </div>
+                <div class="form-actions">
+                  <button type="submit" id="questionSubmitBtn">Add Question</button>
+                  <button class="secondary hidden" type="button" id="cancelEditBtn">Cancel</button>
+                </div>
+              </form>
+              <div class="question-list" id="questionList"></div>
+            </div>
+          </div>
+
+        <div class="actions">
+          <button class="secondary" id="loadSampleBtn" type="button">Load Sample</button>
+          <button class="secondary" id="shareSetupBtn" type="button">Copy Setup Link</button>
+          <button class="secondary" id="resetBtn" type="button">Reset</button>
+          <button class="secondary" id="fullscreenBtn" type="button">Full Screen</button>
+          <button id="startBtn" type="button">Start Game</button>
+        </div>
+        <p class="share-status" id="shareStatus" role="status"></p>
+        </section>
+
+        <section class="view" id="gameView">
+          <div class="scoreboard" id="scoreboard"></div>
+
+          <article class="question-card">
+            <div class="question-meta">
+              <span id="questionCounter">Question 1</span>
+              <span id="pointsLabel">1 point</span>
+            </div>
+            <h2 id="currentQuestion">Question text</h2>
+            <div class="answer-grid" id="answerGrid"></div>
+            <div class="answer-reveal" id="answerReveal"></div>
+          </article>
+
+          <div class="award-panel">
+            <div>
+              <h3>Who got it right?</h3>
+              <p class="helper">Tap friends to award a point after Ashika reveals the answer.</p>
+            </div>
+            <div class="award-grid" id="awardGrid"></div>
+          </div>
+
+          <div class="actions">
+            <button class="secondary" id="backBtn" type="button">Setup</button>
+            <button class="secondary" id="revealBtn" type="button">Reveal Answer</button>
+            <button class="secondary" id="gameFullscreenBtn" type="button">Full Screen</button>
+            <button id="nextBtn" type="button">Next</button>
+          </div>
+        </section>
+
+        <section class="view" id="winnerView">
+          <div class="winner-card">
+            <p class="eyebrow">Final Score</p>
+            <h2 id="winnerTitle">Winner</h2>
+            <div class="final-scores" id="finalScores"></div>
+            <div class="actions">
+              <button class="secondary" id="playAgainBtn" type="button">Play Again</button>
+              <button id="editGameBtn" type="button">Edit Game</button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
